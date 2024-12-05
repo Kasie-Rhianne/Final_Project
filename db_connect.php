@@ -2,7 +2,7 @@
 $host = 'localhost'; 
 $dbname = 'the_music_map'; 
 $user = 'root'; 
-$pass = '';
+$pass = 'mysql';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
