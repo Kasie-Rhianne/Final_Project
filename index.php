@@ -11,7 +11,7 @@ try {
             artists.name AS artist_name, 
             artists.genre AS artist_genre,
             venue.venue_name,
-            venue.city
+            venue.city,
             venue.state
         FROM concerts
         JOIN artists ON concerts.artist_id = artists.artist_id
