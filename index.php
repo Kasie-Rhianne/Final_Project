@@ -1,10 +1,12 @@
 <?php
-// Include database connection
-require_once 'db_connect.php'; // Ensure this file has your PDO setup
+require_once 'db_connect.php'; 
 
-// Fetch example data from a generic table (adjust query for your data)
 try {
-    $query = $pdo->query('SELECT * FROM items LIMIT 5'); // Replace 'items' with your table name
+    $query = $pdo->query('SELECT concerts.concert_id, artists.name AS artist_name, venue.venue_name, concerts.date, concerts.time 
+    FROM concerts
+    JOIN artists ON concerts.artists_id = artists.artist_id
+    JOIN venue ON concert.venue_id = venue.venue_id 
+    LIMIT 5');
     $items = $query->fetchAll();
 } catch (PDOException $e) {
     die('Error fetching data: ' . $e->getMessage());
