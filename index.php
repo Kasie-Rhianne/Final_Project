@@ -10,12 +10,12 @@ try {
             concerts.ticket_url,
             artists.name AS artist_name, 
             artists.genre AS artist_genre,
-            venue.venue_na me,
+            venue.venue_name,
             venue.city
             venue.state
         FROM concerts
-        JOIN artists ON concerts.artists_id = artists.artist_id
-        JOIN venue ON concert.venue_id = venue.venue_id
+        JOIN artists ON concerts.artist_id = artists.artist_id
+        JOIN venue ON concerts.venue_id = venue.venue_id
         ORDER BY concerts.date ASC 
         LIMIT 5
     ');
