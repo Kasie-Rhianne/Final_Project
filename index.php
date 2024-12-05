@@ -19,7 +19,7 @@ try {
         ORDER BY concerts.date ASC 
         LIMIT 5
     ');
-    $items = $query->fetchAll();
+    $concerts = $query->fetchAll();
 } catch (PDOException $e) {
     die('Error fetching data: ' . $e->getMessage());
 }
@@ -34,7 +34,15 @@ try {
     <title>HTML Forms - Text Input Example</title>
 </head>
 <body>
-    <h1>Simple Text Input Example</h1>
+    <header>
+        <h1>The Music Map</h1>
+        <p>Your ultimate guide to live music and concerts</p>
+    </header>
+
+    <section class="hero">
+        <h2>Discover upcoming concerts!</h2>
+        <p>Find live performances, favorite artists, and more!</p>
+    </section>
 
     <form action="submit1.html" method="GET">
         <label for="name">Enter your name:</label>
