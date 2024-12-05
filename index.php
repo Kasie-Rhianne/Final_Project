@@ -47,6 +47,15 @@ try {
         <div class="concerts-container">
             <?php foreach ($concerts as $concert): ?>
             <div class="concert-card">
+                <h3><?= htmlspecialchars($concert['artist_name']); ?></h3>
+                <p><strong>Venue:</strong> <?= htmlspecialchars($concert['venue_name']); ?></p>
+                <p><strong>Date:</strong> <?= htmlspecialchars($concert['date']); ?></p>
+                <p><strong>Time:</strong> <?= htmlspecialchars($concert['time']); ?></p>
+                <a href="<?= htmlspecialchars($concert["ticket_url"]); ?>" target="_blank">Buy Tickets</a>
+            </div>
+            <?php endforeach; ?>    
+        </div>
+    </section>
 
     <form action="submit1.html" method="GET">
         <label for="name">Enter your name:</label>
