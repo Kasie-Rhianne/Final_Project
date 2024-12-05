@@ -57,17 +57,5 @@ try {
         </div>
     </section>
 
-    <form action="submit1.html" method="GET">
-        <label for="name">Enter your name:</label>
-        <input type="text" id="name" name="name_sent" placeholder="Type your name here">
-        <br><br>
-
-        <label for="password">Enter your password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password here">
-        <br><br>
-
-        <button type="submit">Submit</button>
-    </form>
-
 </body>
 </html>
