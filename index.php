@@ -12,3 +12,29 @@ try {
     die('Error fetching data: ' . $e->getMessage());
 }
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms - Text Input Example</title>
+</head>
+<body>
+    <h1>Simple Text Input Example</h1>
+
+    <form action="submit1.html" method="GET">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name_sent" placeholder="Type your name here">
+        <br><br>
+
+        <label for="password">Enter your password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password here">
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
