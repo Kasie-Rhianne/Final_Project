@@ -31,18 +31,22 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Forms - Text Input Example</title>
+    <title>The Music Map</title>
 </head>
 <body>
-    <header>
-        <h1>The Music Map</h1>
-        <p>Your ultimate guide to live music and concerts</p>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>The Music Map</h1>
+            <p>Your ultimate guide to live music and concerts.</p>
+            <a href="about.php" class="cta-button">Learn More</a>
+        </div>
     </header>
 
-    <section class="hero">
-        <h2>Discover upcoming concerts!</h2>
-        <p>Find live performances, favorite artists, and more!</p>
-    </section>
+    <section class="concerts-section">
+        <h2>Upcoming Concerts</h2>
+        <div class="concerts-container">
+            <?php foreach ($concerts as $concert): ?>
+            <div class="concert-card">
 
     <form action="submit1.html" method="GET">
         <label for="name">Enter your name:</label>
