@@ -3,7 +3,7 @@ body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color:cornflowerblue;
+    background-color:rgb(252, 139, 139);
     color: black;
 }
 
@@ -13,7 +13,7 @@ h1, h2, h3 {
 
 
 header {
-    background-color: #333;
+    background-color: #e26613;
     color: white;
     padding: 20px 0;
     text-align: center;
