@@ -19,6 +19,12 @@ header {
     text-align: center;
 }
 
+.concert-card {
+    background-color:beige;
+    border: 1px solid #ccc
+    
+}
+
 main {
     padding: 20px;
     background-color: rgba(0, 123, 167, 0.5);
