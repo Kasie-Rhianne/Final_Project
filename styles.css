@@ -34,33 +34,6 @@ header {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-main {
-    padding: 20px;
-    background-color: rgba(0, 123, 167, 0.5);
-}
-
-.about-me, .projects, .collections {
-    background-color: #f0f8ff;
-    padding: 20px;
-    padding-left: 40px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    border-radius: 8px; /* rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
-}
-
-.projects {
-    background-color: #fafad2;
-}
-
-.collections {
-    background-image: url('beach.jpg');
-    background-size: cover;
-    background-position: center;
-    background-color: rgba(255, 255, 255, 0.5); /* subtle overlay */
-    background-blend-mode: overlay;
-}
-
 footer {
     background-color: #333;
     color: white;
@@ -69,8 +42,4 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
-}
-
-a {
-    color: #00f;
 }
