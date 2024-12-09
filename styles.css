@@ -63,15 +63,19 @@ body {
     background-color: #0056b3;
 }
 
+.concerts-section {
+    padding: 40px 20px;
+}
 
-
-h1, h2, h3 {
-    color:black;
+.concerts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .concert-card {
-    background-color:rgb(228, 120, 58);
-    border: 1px solid #ccc;
+    background: white;
+    border: 1px solid #dee2e6;
     padding: 20px;
     margin: 15px;
     border-radius: 8px;
