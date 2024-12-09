@@ -28,8 +28,8 @@ if (!empty($query)) {
 
         try {
             $stmt = $pdo->prepare($sql);
-            $seachQuery = '%' . "query" . "%";
-            $stmt->bindParam(':query', $searchQuery, PDO:PARAM_STR);
+            $searchQuery = '%' . "query" . "%";
+            $stmt->bindParam(':query', $searchQuery, PDO::PARAM_STR);
             $stmt->execute();
             $results = $stmt->fetchAll();
         } catch (PDOException $e) {
