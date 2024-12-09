@@ -2,6 +2,7 @@
 require_once 'db_connect.php'; 
 
 $query = isset($_GET['query']) ? trim($_GET['query']) : '';
+$results = [];
 
 if (!empty($query)) {
     $sql = "
@@ -32,8 +33,6 @@ if (!empty($query)) {
         } catch (PDOException $e) {
             die('Error fetching search results: ' . $e->getMessage());
         }
-    } else {
-        $results = [];
 }
 
 ?>
