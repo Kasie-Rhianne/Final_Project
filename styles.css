@@ -88,11 +88,38 @@ body {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
+.concert-card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #007bff
+}
+
+.concert-card p {
+    margin: 5px 0;
+}
+
+.concert-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.concert-card a:hover {
+    background-color: #0056b3;
+}
+
+
 footer {
-    background-color: #333;
+    background:#343a40;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px;
+    font-size: 0.9rem;
     position: fixed;
     width: 100%;
     bottom: 0;
