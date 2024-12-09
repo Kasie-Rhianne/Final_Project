@@ -1,10 +1,16 @@
 /* Reset some default browser styles */
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #b8d9e6;
-    color: rgb(255, 239, 91);
+    background-color: #f8f9fa;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #007bff, #6c757d);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
 }
 
 h1, h2, h3 {
