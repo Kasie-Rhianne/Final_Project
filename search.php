@@ -19,5 +19,11 @@ if (!empty($query)) {
         JOIN artists ON concerts.artist_id = artists.artist_id
         JOIN venue ON concerts.venue_id = venue.venue_id
         WHERE
-            artists.name LIK: query "
+            artists.name LIKE: query OR
+            venue.venue_name LIKE: query OR
+            venue.city LIKE: query OR
+            venue.state LIKE: query
+        ORDER BY concerts.date";
 }
+
+?>
