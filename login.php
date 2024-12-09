@@ -1,6 +1,6 @@
 <?php
 session_start();
-require db_connect.php
+require 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -21,3 +21,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
 }
+?>
+
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST">
+        <label for="username">Username</label>
+        <input type="text" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br>
+
+        <button type="submit">Login</button>
+    </form>
+</body>
