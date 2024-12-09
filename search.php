@@ -29,13 +29,15 @@ if (!empty($query)) {
         try {
             $stmt = $pdo->prepare($sql);
             $searchQuery = '%' . $query . '%';
-            $stmt->bindParam(':query', $searchQuery, PDO::PARAM_STR);
-            $stmt->execute();
+            $stmt->execute(['query' => $searchQuery]);
+    
             $results = $stmt->fetchAll();
         } catch (PDOException $e) {
-            die('Error fetching search results: ' . $e->getMessage());
+            error_log('Database error: ' . $e->getMessage());
+            $results = [];
         }
-
+}   else{
+    $results = [];
 }
 ?>
 
