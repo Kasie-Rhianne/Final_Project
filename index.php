@@ -42,6 +42,9 @@ try {
             <a href="about.php" class="cta-button">Learn More</a>
         </div>
         <form action="search.php" method="GET" class="search-form">
+            <input type="text" name="query" placeholder="Search concerts, artists, or venues" required>
+            <button type="submit">Search</button>
+        </form>
     </header>
 
     <section class="concerts-section">
