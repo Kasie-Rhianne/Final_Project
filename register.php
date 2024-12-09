@@ -2,10 +2,20 @@
 include 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = isset($_POST['username']) ? trim($_POST['username']) : null;
+    $password = isset($_POST['password']) ? trim($_POST['password']) : null;
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    if ($username && $password){
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        $conn = new mysqli('localhost', 'root', '', 'the_music_map');
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        
+
+    }
 
     $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
     $stmt = $pdo->prepare($sql);
