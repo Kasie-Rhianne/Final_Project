@@ -51,4 +51,29 @@ if (!empty($query)) {
             <a href="index.php" class="cta-button">Back To Home</a>
         </div>
     </header>
+
+    <section class="concerts-section">
+        <h2>Results for: "<?= htmlspecialchars($query); ?>"</h2>
+        <div class="concerts-container">
+            <?php if ($results): ?>
+                <?php foreach ($results as $results): ?>
+                <div class="concert-card">
+                    <h3><?= htmlspecialchars($concert['artist_name']); ?></h3>
+                    <p><strong>Venue:</strong> <?= htmlspecialchars($concert['venue_name']); ?></p>
+                    <p><strong>Date:</strong> <?= htmlspecialchars($concert['date']); ?></p>
+                    <p><strong>Time:</strong> <?= htmlspecialchars($concert['time']); ?></p>
+                    <a href="<?= htmlspecialchars($concert["ticket_url"]); ?>" target="_blank">Buy Tickets</a>
+                </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No results found for your query.</p>
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 The Music Map. All Rights Reserved</p>
+    </footer>
+
 </body>
+</html>
