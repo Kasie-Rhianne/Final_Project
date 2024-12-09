@@ -1,6 +1,6 @@
 <?php
 start_session();
-require 'db_connect.php'
+require 'db_connect.php';
 
 if(!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -22,5 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: dashboard.php");
 
 } else {
-    $sql
+    $sql = "SELECT * FROM concerts WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['id' => %id]);
+    $concert = $stmt->fetch();
 }
+?>
