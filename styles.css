@@ -36,6 +36,29 @@ body {
     background-color: #e0a800;
 }
 
+.search-form {
+    margin-top: 20px;
+}
+
+.search-form input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 60%;
+    max-width: 500px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 h1, h2, h3 {
     color:black;
 }
