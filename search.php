@@ -60,7 +60,7 @@ if (!empty($query)) {
         <h2>Results for: "<?= htmlspecialchars($query); ?>"</h2>
         <div class="concerts-container">
             <?php if ($results): ?>
-                <?php foreach ($results as $results): ?>
+                <?php foreach ($results as $concert): ?>
                 <div class="concert-card">
                     <h3><?= htmlspecialchars($concert['artist_name']); ?></h3>
                     <p><strong>Venue:</strong> <?= htmlspecialchars($concert['venue_name']); ?></p>
