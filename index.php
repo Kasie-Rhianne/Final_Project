@@ -41,6 +41,7 @@ try {
             <p>Your ultimate guide to live music and concerts.</p>
             <a href="about.php" class="cta-button">Learn More</a>
         </div>
+        <form action="search.php" method="GET" class="search-form">
     </header>
 
     <section class="concerts-section">
