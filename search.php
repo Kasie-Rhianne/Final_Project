@@ -24,6 +24,16 @@ if (!empty($query)) {
             venue.city LIKE: query OR
             venue.state LIKE: query
         ORDER BY concerts.date";
+
+        try {
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['query' => '%' . $query . '%']);
+            $results = $stmt->fetchAll();
+        } catch (PDOException $e) {
+            die('Error fetching search results: ' . $e->getMessage());
+        }
+    } else {
+        $results = [];
 }
 
 ?>
