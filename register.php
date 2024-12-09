@@ -7,11 +7,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute([$username, $password]);
+    $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+    $stmt = $pdo->prepare($sql);
 
-    echo "Registration Successful!";
+    try {
+        $stmt->execute(['username' => $username, 'password' => $hashedPassword]);
+        echo "Registration successful! <a href='login.php'>Login here</a>";
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+
+    }
+
 }
 ?>
 
