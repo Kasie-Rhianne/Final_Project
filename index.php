@@ -39,7 +39,7 @@ try {
         <div class="hero-content">
             <h1>The Music Map</h1>
             <p>Your ultimate guide to live music and concerts.</p>
-            <a href="about.php" class="cta-button">Learn More</a>
+            <a href="about.html" class="cta-button">Learn More</a>
         </div>
         <form action="search.php" method="GET" class="search-form">
             <input type="text" name="query" placeholder="Search concerts, artists, or venues" required>
