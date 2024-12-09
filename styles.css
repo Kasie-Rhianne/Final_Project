@@ -59,16 +59,14 @@ body {
     cursor: pointer;
 }
 
-h1, h2, h3 {
-    color:black;
+.search-form button:hover {
+    background-color: #0056b3;
 }
 
 
-header {
-    background-color:rgb(118, 161, 255);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+
+h1, h2, h3 {
+    color:black;
 }
 
 .concert-card {
