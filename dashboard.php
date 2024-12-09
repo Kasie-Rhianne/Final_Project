@@ -27,5 +27,14 @@ $concerts = $stmt->fetchAll();
     <h2>Manage concerts</h2>
 
     <a href="add_concert.php">Add New Concert</a>
-    
+
+    <ul>
+        <?php foreach ($concerts as $concert): ?>
+            <li>
+                <?php echo $concert['artist']; ?> at <?php echo $concert['venue']; ?> on <?php echo $concert['date']; ?>
+                <a href="edit_concert.php?id=<?php echo $concert['id']; ?>">Edit</a>
+                <a href="delete_concert.php?id=<?php echo $concert['id']; ?>">Delete</a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
 </body>
