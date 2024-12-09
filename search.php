@@ -44,3 +44,11 @@ if (!empty($query)) {
     <title>Search Results</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Search Results</h1>
+            <a href="index.php" class="cta-button">Back To Home</a>
+        </div>
+    </header>
+</body>
