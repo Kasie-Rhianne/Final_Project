@@ -56,4 +56,14 @@ if(!isset($_GET['artist_id']) &&  !empty($_GET['artist_id'])) {
             <?php endif; ?>
             <p><a href="<?= htmlspecialchars($artist['website']); ?>" target="_blank">Visit Website</a></p>
     </header>
+
+    <section class="concerts-section">
+        <h2>Upcoming Concerts</h2>
+        <div class="concerts-container">
+            <?php if (empty($artist['concert_id'])): ?>
+                <p>No upcoming concerts for this artist.</p>
+            <?php else: ?>
+                <div class="concert-card">
+                    <h3>Concert at <?= htmlspecialchars</h3>
+
 </body>
