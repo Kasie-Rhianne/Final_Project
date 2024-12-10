@@ -2,6 +2,16 @@
 require_once 'db_connect.php'; 
 
 try {
+    $genreQuery = $pdo->query('SELECT DISTINCT genre FROM artists');
+    $genres = $genreQuery->fetchAll();
+} catch (PDOException $e) {
+    die('Error fetching genres: ' . $e->getMessage());
+}
+
+$artists = [];
+if (isset)
+
+try {
     $query = $pdo->query('
         SELECT 
             concerts.concert_id, 
