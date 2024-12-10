@@ -13,21 +13,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        
+        $stmt = conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+        $stmt->bind_param("ss", $username, $hashedPassword);
 
+        if ($stmt->execute()) {
+            echo "Registration successful!";
+            header("Location: login.php");
+            exit;
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+        $conn->close();
+    } else {
+        echo "Please fill out all fields";
     }
-
-    $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
-    $stmt = $pdo->prepare($sql);
-
-    try {
-        $stmt->execute(['username' => $username, 'password' => $hashedPassword]);
-        echo "Registration successful! <a href='login.php'>Login here</a>";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-
-    }
-
 }
 ?>
 
