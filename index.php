@@ -9,9 +9,34 @@ try {
 }
 
 $artists = [];
-if (isset)
+if (isset($_GET['genre']) && !empty($_GET['genre'])) {
+    $genre = $_GET['genre'];
 
-try {
+    try {
+        $query = $pdo->query('
+        SELECT 
+            concerts.concert_id, 
+            concerts.date,
+            concerts.time,
+            concerts.ticket_url,
+            artists.name AS artist_name, 
+            artists.genre AS artist_genre,
+            venue.venue_name,
+            venue.city,
+            venue.state
+        FROM concerts
+        JOIN artists ON concerts.artist_id = artists.artist_id
+        JOIN venue ON concerts.venue_id = venue.venue_id
+        WHERE artists.genre = :genre
+        ORDER BY concerts.date ASC 
+        LIMIT 5
+    ');
+    $query->execute(['genre' =>$genre]);
+    $concerts = $query->fetchAll();
+    } catch(PDOException $e) {
+        die('Error fetching data: ' . e->getMessage());
+    }
+} else {
     $query = $pdo->query('
         SELECT 
             concerts.concert_id, 
@@ -31,8 +56,9 @@ try {
     ');
     $concerts = $query->fetchAll();
 } catch (PDOException $e) {
-    die('Error fetching data: ' . $e->getMessage());
-}
+        die('Error fetching data: ' . $e->getMessage());
+    }
+
 ?>
 
 
@@ -56,6 +82,9 @@ try {
             <input type="text" name="query" placeholder="Search concerts, artists, or venues" required>
             <button type="submit">Search</button>
         </form>
+
+        <form action="index.php" method="GET" class="genre-form">
+            <label for="genre">Select Genre:</label>
     </header>
 
     <section class="concerts-section">
