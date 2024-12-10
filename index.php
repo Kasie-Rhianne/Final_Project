@@ -34,7 +34,7 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
     $query->execute(['genre' =>$genre]);
     $concerts = $query->fetchAll();
     } catch(PDOException $e) {
-        die('Error fetching data: ' . e->getMessage());
+        die('Error fetching data: ' . $e->getMessage());
     }
 } else {
     $query = $pdo->query('
@@ -55,9 +55,7 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
         LIMIT 5
     ');
     $concerts = $query->fetchAll();
-} catch (PDOException $e) {
-        die('Error fetching data: ' . $e->getMessage());
-    }
+}
 
 ?>
 
@@ -89,7 +87,13 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
                 <option value="">Select Genre</option>
                 <?php foreach ($genres as $genre): ?>
                     <option value="<?=htmlspecialchars($genre['genre']); ?>"
-                        <?php if (isset($_GET['genre']))
+                        <?php if (isset($_GET['genre']) && $_GET['genre'] === $genre['genre']) echo 'selected'; ?>>
+                        <?= htmlspecialchars($genre['genre']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <button type="submit">Search</button>
+        </form>
     </header>
 
     <section class="concerts-section">
