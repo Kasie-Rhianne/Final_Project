@@ -43,6 +43,17 @@ if(!isset($_GET['artist_id']) &&  !empty($_GET['artist_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Music Map</title>
+    <title><?= htmlspecialchars($artist['name']); ?> - The Music Map</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <header class="hero.section">
+        <h1>Artist Profile: <?= htmlspecialchars($artist['name']); ?></h1>
+        <p>Genre: <?= htmlspecialchars($artist['genre']); ?></p>
+        <p>Bio: <?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
+        <?php if ($artist['image_url']): ?>
+            <img src="<?= htmlspecialchars($artist['image']); ?>" alt="Artist Image">
+            <?php endif; ?>
+            <p><a href="<?= htmlspecialchars($artist['website']); ?>" target="_blank">Visit Website</a></p>
+    </header>
+</body>
