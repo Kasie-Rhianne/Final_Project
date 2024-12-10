@@ -85,6 +85,11 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
 
         <form action="index.php" method="GET" class="genre-form">
             <label for="genre">Select Genre:</label>
+            <select name="genre" id="genre">
+                <option value="">Select Genre</option>
+                <?php foreach ($genres as $genre): ?>
+                    <option value="<?=htmlspecialchars($genre['genre']); ?>"
+                        <?php if (isset($_GET['genre']))
     </header>
 
     <section class="concerts-section">
