@@ -42,14 +42,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <h1>Create an Account</h1>
-    <form method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="password" required><br>
-
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br>
-
-        <button type="submit">Register</button>
+    <form method="POST" action="register.php">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+        </div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
     </form>
     <p>Already have an account? <a href="login.php">Login here</a></p>
 </body>
