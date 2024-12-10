@@ -64,6 +64,19 @@ if(!isset($_GET['artist_id']) &&  !empty($_GET['artist_id'])) {
                 <p>No upcoming concerts for this artist.</p>
             <?php else: ?>
                 <div class="concert-card">
-                    <h3>Concert at <?= htmlspecialchars</h3>
+                    <h3>Concert at <?= htmlspecialchars($artist['venue_name']); ?></h3>
+                    <p><strong>City:</strong> <?= htmlspecialchars($artist['city']); ?>, <?= htmlspecialchars($artist['state']); ?></p>
+                    <p><strong>Date:</strong> <?= htmlspecialchars($artist['date']); ?></p>
+                    <p><strong>Time:</strong> <?= htmlspecialchars($artist['time']); ?></p>
+                    <a href="<?= htmlspecialchars($artist['ticket_url']); ?>" target="_blank">Buy Tickets</a>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 The Music Map. All Rights Reserved</p>
+    </footer>
 
 </body>
+</html>
