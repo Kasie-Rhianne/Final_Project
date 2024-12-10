@@ -142,9 +142,9 @@ footer {
     background:#343a40;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
     font-size: 0.9rem;
     position: fixed;
-    width: 100%;
+    width:100%;
     bottom: 0;
 }
