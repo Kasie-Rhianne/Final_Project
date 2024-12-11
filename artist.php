@@ -2,7 +2,9 @@
 session_start();
 require 'db_connect.php';
 
-if(!isset($_GET['artist_id']) &&  !empty($_GET['artist_id'])) {
+if(!isset($_GET['artist_id']) || !empty($_GET['artist_id'])) {
+    die('Artist ID is required');
+}
     $artist_id = $_GET['artist_id'];
     
     try {
@@ -11,17 +13,9 @@ if(!isset($_GET['artist_id']) &&  !empty($_GET['artist_id'])) {
             artists.name,
             artists.genre,
             artists.bio,
-            artists.image_url
+            artists.image_url,
             artists.website,
-            concerts.concert_id,
-            concerts.date,
-            concerts.time,
-            venue.venue_name,
-            venue.city,
-            venue.state
         FROM artists
-        LEFT JOIN concerts ON concerts.artist_id = artists.artist_id
-        LEFT JOIN venue ON concerts.venue_id = venue.venue_id
         WHERE artists.artist_id = :artist_id
         ');
         $query->execute(['artist_id' => $artist_id]);
@@ -30,12 +24,25 @@ if(!isset($_GET['artist_id']) &&  !empty($_GET['artist_id'])) {
         if (!$artist) {
             die('Artist not found!');           
         }
+
+        $concertsQuery = $pdo->prepare('
+        SELECT
+            concerts.concert_id, 
+            concerts.date,
+            concerts.time,
+            venue.venue_name,
+            venue.city,
+            venue.state
+        FROM concerts
+        LEFT JOIN venue ON concerts.venue_id = venue.venue_id
+        WHERE concerts.artist_id = :artist_id
+        ');
+        $concertsQuery->execute(['artist_id' => $artist_id]);
+        $concerts = $concertsQuery->fetchAll();
+
     } catch (PDOException $e) {
         die('Error fetching artist data: ' . $e->getMessage());
     }
-} else {
-    die('Artist ID is required');
-}
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +59,7 @@ if(!isset($_GET['artist_id']) &&  !empty($_GET['artist_id'])) {
         <p>Genre: <?= htmlspecialchars($artist['genre']); ?></p>
         <p>Bio: <?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
         <?php if ($artist['image_url']): ?>
-            <img src="<?= htmlspecialchars($artist['image']); ?>" alt="Artist Image">
+            <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="Artist Image">
             <?php endif; ?>
             <p><a href="<?= htmlspecialchars($artist['website']); ?>" target="_blank">Visit Website</a></p>
     </header>
