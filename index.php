@@ -13,14 +13,14 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
     $genre = $_GET['genre'];
 
     try {
-        $query = $pdo->query('
+        $query = $pdo->prepare('
         SELECT 
             concerts.concert_id, 
             concerts.date,
             concerts.time,
             concerts.ticket_url,
             artists.name AS artist_name, 
-            artists.genre AS artist_genre
+            artists.genre AS artist_genre,
             artists.artist_id,
             venue.venue_name,
             venue.city,
@@ -32,7 +32,7 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
         ORDER BY concerts.date ASC 
         LIMIT 5
     ');
-    $query->execute(['genre' =>$genre]);
+    $query->execute(['genre' => $genre]);
     $concerts = $query->fetchAll();
     } catch(PDOException $e) {
         die('Error fetching data: ' . $e->getMessage());

@@ -13,8 +13,7 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
             artists.name,
             artists.genre,
             artists.bio,
-            artists.image_url,
-            artists.website
+            artists.image_url
         FROM artists
         WHERE artists.artist_id = :artist_id
         ');
@@ -30,6 +29,7 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
             concerts.concert_id, 
             concerts.date,
             concerts.time,
+            concerts.ticket_url,
             venue.venue_name,
             venue.city,
             venue.state
@@ -62,7 +62,6 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
         <?php if ($artist['image_url']): ?>
             <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="Artist Image">
             <?php endif; ?>
-            <p><a href="<?= htmlspecialchars($artist['website']); ?>" target="_blank">Visit Website</a></p>
     </header>
 
     <section class="concerts-section">
@@ -71,13 +70,15 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
             <?php if (empty($concerts)): ?>
                 <p>No upcoming concerts for this artist.</p>
             <?php else: ?>
-                <div class="concert-card">
-                    <h3>Concert at <?= htmlspecialchars($concerts['venue_name']); ?></h3>
-                    <p><strong>City:</strong> <?= htmlspecialchars($concerts['city']); ?>, <?= htmlspecialchars($artist['state']); ?></p>
-                    <p><strong>Date:</strong> <?= htmlspecialchars($concerts['date']); ?></p>
-                    <p><strong>Time:</strong> <?= htmlspecialchars($concerts['time']); ?></p>
-                    <a href="<?= htmlspecialchars($concerts['ticket_url']); ?>" target="_blank">Buy Tickets</a>
-                </div>
+                <?php foreach ($concerts as $concert): ?>
+                    <div class="concert-card">
+                        <h3>Concert at <?= htmlspecialchars($concerts['venue_name']); ?></h3>
+                        <p><strong>City:</strong> <?= htmlspecialchars($concerts['city']); ?>, <?= htmlspecialchars($artist['state']); ?></p>
+                        <p><strong>Date:</strong> <?= htmlspecialchars($concerts['date']); ?></p>
+                        <p><strong>Time:</strong> <?= htmlspecialchars($concerts['time']); ?></p>
+                        <a href="<?= htmlspecialchars($concerts['ticket_url']); ?>" target="_blank">Buy Tickets</a>
+                    </div>
+                <?php endforeach; ?>
             <?php endif; ?>
         </div>
     </section>
