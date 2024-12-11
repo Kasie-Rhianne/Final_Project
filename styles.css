@@ -137,6 +137,71 @@ body {
     margin-bottom: 5px;
 }
 
+.artist-header {
+    background-color: linear-gradient(135deg, #6f42c1, #007bff);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.artist-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #ffc107;
+}
+.artist-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.artist-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.artist-profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 2px solid #007bff;
+}
+
+.artist-header .details {
+    flex: 1;
+}
+
+.artist-profile .details h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #007bff;
+}
+
+.artist-profile .details p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.artist-profile .details a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #ffc107;
+    color: #343a40;
+    text-decoration: none;
+    border: 5px;
+}
+
+
 
 footer {
     background:#343a40;
