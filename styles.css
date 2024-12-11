@@ -27,7 +27,7 @@ body {
     color: #343a40;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px;
     font-weight: bold;
 
 }
@@ -64,13 +64,15 @@ body {
 }
 
 .concerts-section {
-    padding: 40px 20px;
+    background-color: #f9f9f9;
+    padding: 60px 20px;
 }
 
 .concerts-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
 }
 
 .concert-card {
@@ -79,8 +81,8 @@ body {
     padding: 20px;
     margin: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .concert-card:hover {
@@ -160,11 +162,11 @@ body {
     justify-content: space-between;
     background-color: white;
     border: 1px solid #dee2e6;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 20px;
     margin: 40px auto;
     max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .artist-profile img {
@@ -172,8 +174,8 @@ body {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 20px;
-    border: 2px solid #007bff;
+    margin-right: 40px;
+    border: 2px solid #ff4500;
 }
 
 .artist-header .details {

@@ -55,7 +55,7 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="hero.section">
+    <header class="hero-section">
         <h1>Artist Profile: <?= htmlspecialchars($artist['name']); ?></h1>
         <p>Genre: <?= htmlspecialchars($artist['genre']); ?></p>
         <p>Bio: <?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
@@ -72,11 +72,11 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
             <?php else: ?>
                 <?php foreach ($concerts as $concert): ?>
                     <div class="concert-card">
-                        <h3>Concert at <?= htmlspecialchars($concerts['venue_name']); ?></h3>
-                        <p><strong>City:</strong> <?= htmlspecialchars($concerts['city']); ?>, <?= htmlspecialchars($artist['state']); ?></p>
-                        <p><strong>Date:</strong> <?= htmlspecialchars($concerts['date']); ?></p>
-                        <p><strong>Time:</strong> <?= htmlspecialchars($concerts['time']); ?></p>
-                        <a href="<?= htmlspecialchars($concerts['ticket_url']); ?>" target="_blank">Buy Tickets</a>
+                        <h3>Concert at <?= htmlspecialchars($concert['venue_name']); ?></h3>
+                        <p><strong>City:</strong> <?= htmlspecialchars($concert['city']); ?>, <?= htmlspecialchars($concert['state']); ?></p>
+                        <p><strong>Date:</strong> <?= htmlspecialchars($concert['date']); ?></p>
+                        <p><strong>Time:</strong> <?= htmlspecialchars($concert['time']); ?></p>
+                        <a href="<?= htmlspecialchars($concert['ticket_url']); ?>" target="_blank">Buy Tickets</a>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
