@@ -1,5 +1,5 @@
 <?php
-start_session();
+session_start();
 require 'db_connect.php';
 
 if(!isset($_SESSION['user_id'])) {

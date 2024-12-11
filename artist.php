@@ -1,5 +1,5 @@
 <?php
-start_session();
+session_start();
 require 'db_connect.php';
 
 if(!isset($_GET['artist_id']) &&  !empty($_GET['artist_id'])) {

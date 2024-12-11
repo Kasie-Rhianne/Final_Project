@@ -46,7 +46,7 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
             concerts.ticket_url,
             artists.name AS artist_name, 
             artists.genre AS artist_genre,
-            artists.artists_id,
+            artists.artist_id,
             venue.venue_name,
             venue.city,
             venue.state
