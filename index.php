@@ -8,7 +8,7 @@ try {
     die('Error fetching genres: ' . $e->getMessage());
 }
 
-$artists = [];
+$concerts = [];
 if (isset($_GET['genre']) && !empty($_GET['genre'])) {
     $genre = $_GET['genre'];
 
@@ -20,7 +20,8 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
             concerts.time,
             concerts.ticket_url,
             artists.name AS artist_name, 
-            artists.genre AS artist_genre,
+            artists.genre AS artist_genre
+            artists.artist_id,
             venue.venue_name,
             venue.city,
             venue.state
@@ -45,6 +46,7 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
             concerts.ticket_url,
             artists.name AS artist_name, 
             artists.genre AS artist_genre,
+            artists.artists_id,
             venue.venue_name,
             venue.city,
             venue.state
@@ -101,7 +103,11 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
         <div class="concerts-container">
             <?php foreach ($concerts as $concert): ?>
             <div class="concert-card">
-                <h3><?= htmlspecialchars($concert['artist_name']); ?></h3>
+                <h3>
+                    <a href="artist.php?artist_id=<?= htmlspecialchars($concert['artist_id']); ?>">
+                        <?= htmlspecialchars($concert['artist_name']); ?>
+                    </a>
+                </h3>
                 <p><strong>Venue:</strong> <?= htmlspecialchars($concert['venue_name']); ?></p>
                 <p><strong>Date:</strong> <?= htmlspecialchars($concert['date']); ?></p>
                 <p><strong>Time:</strong> <?= htmlspecialchars($concert['time']); ?></p>
