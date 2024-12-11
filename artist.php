@@ -2,7 +2,7 @@
 session_start();
 require 'db_connect.php';
 
-if(!isset($_GET['artist_id']) || !empty($_GET['artist_id'])) {
+if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
     die('Artist ID is required');
 }
     $artist_id = $_GET['artist_id'];
@@ -14,7 +14,7 @@ if(!isset($_GET['artist_id']) || !empty($_GET['artist_id'])) {
             artists.genre,
             artists.bio,
             artists.image_url,
-            artists.website,
+            artists.website
         FROM artists
         WHERE artists.artist_id = :artist_id
         ');
@@ -68,15 +68,15 @@ if(!isset($_GET['artist_id']) || !empty($_GET['artist_id'])) {
     <section class="concerts-section">
         <h2>Upcoming Concerts</h2>
         <div class="concerts-container">
-            <?php if (empty($artist['concert_id'])): ?>
+            <?php if (empty($concerts)): ?>
                 <p>No upcoming concerts for this artist.</p>
             <?php else: ?>
                 <div class="concert-card">
-                    <h3>Concert at <?= htmlspecialchars($artist['venue_name']); ?></h3>
-                    <p><strong>City:</strong> <?= htmlspecialchars($artist['city']); ?>, <?= htmlspecialchars($artist['state']); ?></p>
-                    <p><strong>Date:</strong> <?= htmlspecialchars($artist['date']); ?></p>
-                    <p><strong>Time:</strong> <?= htmlspecialchars($artist['time']); ?></p>
-                    <a href="<?= htmlspecialchars($artist['ticket_url']); ?>" target="_blank">Buy Tickets</a>
+                    <h3>Concert at <?= htmlspecialchars($concerts['venue_name']); ?></h3>
+                    <p><strong>City:</strong> <?= htmlspecialchars($concerts['city']); ?>, <?= htmlspecialchars($artist['state']); ?></p>
+                    <p><strong>Date:</strong> <?= htmlspecialchars($concerts['date']); ?></p>
+                    <p><strong>Time:</strong> <?= htmlspecialchars($concerts['time']); ?></p>
+                    <a href="<?= htmlspecialchars($concerts['ticket_url']); ?>" target="_blank">Buy Tickets</a>
                 </div>
             <?php endif; ?>
         </div>
