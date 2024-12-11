@@ -35,6 +35,7 @@ if(!isset($_GET['artist_id']) || !empty($_GET['artist_id'])) {
             venue.state
         FROM concerts
         LEFT JOIN venue ON concerts.venue_id = venue.venue_id
+
         WHERE concerts.artist_id = :artist_id
         ');
         $concertsQuery->execute(['artist_id' => $artist_id]);
