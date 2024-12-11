@@ -138,7 +138,7 @@ body {
 }
 
 .artist-header {
-    background-color: linear-gradient(135deg, #6f42c1, #007bff);
+    background: linear-gradient(135deg, #6f42c1, #007bff);
     color: white;
     text-align: center;
     padding: 40px 20px;
@@ -198,7 +198,13 @@ body {
     background-color: #ffc107;
     color: #343a40;
     text-decoration: none;
-    border: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.artist-profile .details a:hover {
+    background-color: #e0a800;
 }
 
 
@@ -212,4 +218,23 @@ footer {
     position: fixed;
     width:100%;
     bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .artist-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .artist-profile img {
+        margin-bottom: 20px;
+    }
+
+    .artist-profile .details {
+        text-align: center;     
+    }
+
+    .concerts-container {
+        grid-template-columns: 1fr;
+    }
 }
