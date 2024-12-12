@@ -1,21 +1,27 @@
 /* Reset some default browser styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F8F1FF;
+    background-color: #F4F7FD;
+    line-height: 1.6;
+    color: #333;
 }
 
 .hero-section {
-    background: linear-gradient(135deg, #FF6F61, #F8F1FF);
+    background: url('pictures/download\ \(3\).jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 60px 20px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 .hero-section h1 {
     font-size: 3rem;
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 }
 
 .hero-section p {
@@ -30,11 +36,14 @@ body {
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
+.cta-button :hover {
     background-color: #FF8C42;
+    transform: scale(1.05);
 }
 
 .search-form {
@@ -47,7 +56,7 @@ body {
     width: 70%;
     max-width: 600px;
     border: 1px solid #ced4da;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .search-form button {
@@ -56,7 +65,7 @@ body {
     color: white;
     background-color: #FF6F61;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -67,6 +76,7 @@ body {
 .concerts-section {
     background-color: #F8F1FF;
     padding: 80px 20px;
+    border-top: 2px solid #dee2e6;
 }
 
 .concerts-container {
@@ -78,15 +88,16 @@ body {
 
 .concert-card {
     background: white;
-    border: 1px solid #dee2e6;
+    border: 1px solid #ddd;
     padding: 30px;
     margin: 15px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
     max-width: 320px;
     text-align: center;
+    overflow: hidden;
 }
 
 .concert-card:hover {
@@ -222,8 +233,8 @@ footer {
     background:#343a40;
     color: white;
     text-align: center;
-    padding: 0px;
-    font-size: 0.9rem;
+    padding: 10px 20px;
+    font-size: 0.8rem;
     position: fixed;
     width:100%;
     bottom: 0;
