@@ -7,7 +7,11 @@ if(!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$id = $_GET['id'];
+$id = $_GET['id'] ?? null;
+if ($id === null) {
+    header("Location: dashboard.php");
+    exit();
+}
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $artist = $_POST['artist'];
     $venue = $_POST['venue'];

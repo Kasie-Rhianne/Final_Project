@@ -8,14 +8,14 @@ if(!isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $artist_id = $_POST['artist_id'];
-    $venue_id = $_POST['venue_id'];
+    $artists = $_POST['artist_id'];
+    $venues = $_POST['venue_id'];
     $date = $_POST['date'];
     $time = $_POST['time'];
 
     $sql = "INSERT INTO concerts (artist_id, venue_id, date, time) VALUES (:artist_id, :venue_id, :date, :time)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['artist_id' => $artist_id, 'venue_id' => $venue_id, 'date' => $date, 'time' => $time]);
+    $stmt->execute(['artist_id' => $artists, 'venue_id' => $venues, 'date' => $date, 'time' => $time]);
 
     echo "Concert added successfully!";
     header("Location: dashboard.php");
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="venue_id">Venue:</label>
         <select name="venue_id" required>
             <?php
-            $artists = $pdo->query("SELECT id, name FROM venues")->fetchAll();
+            $venues = $pdo->query("SELECT id, name FROM venue")->fetchAll();
             foreach ($venues as $venue) {
                 echo "<option value='" . $venue['id'] . "'>" . $venue['name'] . "</option>";
             }
