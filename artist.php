@@ -62,18 +62,21 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
             <p class="hero-bio">Bio: <?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
             <a href="#concerts" class="cta-button">See Upcoming Concerts</a>
         </div>
-        
-        <?php if ($artist['image_url']): ?>
-            <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="Artist Image" class="artist-image">
-        <?php endif; ?>
     </header>
 
     <div class="artist-page">
-        <section class="artist_bio">
-            <h2>Artist Biograpgy</h2>
-            <p><?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
-        </section>
-        
+        <div class="artist-profile">
+            <div class="details">
+                <h2><?= htmlspecialchars($artist['name']); ?></h2>
+                <p><strong>Genre:</strong> <?= htmlspecialchars($artist['genre']); ?></p>
+                <p class="bio"><?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
+            </div>
+            
+            <?php if ($artist['image_url']): ?>
+                <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="Artist Image" class="artist-image">
+            <?php endif; ?>
+        </div>
+
         <section class="concerts-section" id="concerts">
             <h2 class="section-title">Upcoming Concerts</h2>
             <div class="concerts-container">

@@ -248,22 +248,29 @@ body {
     max-width: 300px;
     height: auto;
     border-radius: 10%;
-    margin-left: 20px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .artist-page {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     margin: 20%;
+}
+
+.artist-profile .bio {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
 }
 
 .artist-profile {
     display: flex;
     flex-wrap: wrap;
-    align-items: space-between;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     background-color: white;
     border: 1px solid #dee2e6;
     border-radius: 15px;
@@ -273,10 +280,8 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.artist-header .details {
-    flex: 1;
-    max-width: 60%;
-    text-align: left;
+.artist-profile .details {
+    text-align: center;
 }
 
 .artist-profile .details h2 {
