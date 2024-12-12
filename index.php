@@ -2,6 +2,13 @@
 require_once 'db_connect.php'; 
 
 try {
+    $artistQuery = $pdo->query('SELECT artist_id, name AS artist_name, genre, image_url FROM artists LIMIT 5');
+    $featuredArtists = $artistQuery->fetchAll();
+} catch (PDOException $e) {
+    die('Error fetching genres: ' . $e->getMessage());
+}
+
+try {
     $genreQuery = $pdo->query('SELECT DISTINCT genre FROM artists');
     $genres = $genreQuery->fetchAll();
 } catch (PDOException $e) {
@@ -120,11 +127,41 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
     </section>
 
     <section class="featured-artists">
-        <h2 class="text-center my-4></h2>
+        <h2 class="section-title">Featured Artists</h2>
+        <div id="featuredArtistsCarousel" class="carousel-slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item-active">
+                    <?php
+                    $isFirstItem = true;
+                    foreach ($featuredArtists as $artist):
+                        $activeClass = $isFirstItem ? 'active' : ''; 
+                        $isFirstItem = false;
+                    ?>
+                    <div class="artist-card <?= $activeClass; ?>">
+                        <img src="<?= htmlspecialchars($artist['image_url']); ?>" class="artist-image" alt="<?= htmlspecialchars($artist['image_url']); ?>">
+                        <div class="artist-info">
+                            <h5 class="artist-name"><?= htmlspecialchars($artist['artist_name']); ?></h5> 
+                            <p class="artist-genre"><?= htmlspecialchars($artist['genre']); ?></p>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+
+            <button class="carousel-prev-control" type="button" data-bs-target="#artistCarousel" data-bs-slide="prev">
+                <span class="control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-next-control" type="button" data-bs-target="#artistCarousel" data-bs-slide="next">
+                <span class="control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
 
     <footer class="footer">
         <p>&copy; 2024 The Music Map. All Rights Reserved</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

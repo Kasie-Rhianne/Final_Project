@@ -62,10 +62,10 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
         </div>
     </header>
 
-    <div class="artist-page">
+    <main class="artist-page">
         <div class="artist-profile">
         <?php if ($artist['image_url']): ?>
-                <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="Artist Image" class="artist-image">
+                <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="<?= htmlspecialchars($artist['name']); ?>" class="artist-image">
             <?php endif; ?>
 
             <div class="details">
@@ -79,11 +79,11 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
             <h2 class="section-title">Upcoming Concerts</h2>
             <div class="concerts-container">
                 <?php if (empty($concerts)): ?>
-                    <p>No upcomingcConcerts for this artist</p>
+                    <p>No upcoming concerts for this artist</p>
                 <?php else: ?> 
                     <?php foreach ($concerts as $concert): ?>
                         <div class="concert-card">
-                        <h3 class="concert-title">Concert at <?= htmlspecialchars($concert['venue_name']); ?></h3>
+                        <h3>Concert at <?= htmlspecialchars($concert['venue_name']); ?></h3>
                         <p><strong>City:</strong> <?= htmlspecialchars($concert['city']); ?>, <?= htmlspecialchars($concert['state']); ?></p>
                         <p><strong>Date:</strong> <?= htmlspecialchars($concert['date']); ?></p>
                         <p><strong>Time:</strong> <?= htmlspecialchars($concert['time']); ?></p>

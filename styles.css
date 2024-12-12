@@ -264,20 +264,17 @@ body {
 }
 
 .artist-profile img {
-    max-width: 300px;
+    max-width: 250px;
     height: auto;
-    border-radius: 10%;
+    border-radius: 8px;
     margin-bottom: 20px;
     margin-left: 20%;
 }
 
 .artist-page {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 70%;
-    flex-grow: 1;
-    padding-bottom: 100px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
 }
 
 .artist-profile .bio {
@@ -288,12 +285,14 @@ body {
 }
 
 .artist-profile {
+    display: flex;
+    gap: 2rem;
     flex: 1;
-    margin-right: 20px;
+    margin-bottom: 2rem;
     background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .artist-profile .details {
@@ -329,6 +328,51 @@ body {
     transform: scale(1.05);
 }
 
+.featured-artists {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.carousel-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.artist-card {
+    display: none;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.artist-card.active-slide {
+    display: block;
+}
+
+.artist-image {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.artist-info {
+    background: rgba(0, 0 , 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: -80px;
+}
+
+.artist-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.artist-genre {
+    font-size: 1rem;
+    margin-top: 5px;
+}
 
 
 footer {
