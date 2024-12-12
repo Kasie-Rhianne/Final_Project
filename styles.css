@@ -3,157 +3,164 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
+    background-color: #F8F1FF;
 }
 
 .hero-section {
-    background: linear-gradient(135deg, #007bff, #6c757d);
+    background: linear-gradient(135deg, #FF6F61, #F8F1FF);
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 .hero-section h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .hero-section p {
-    margin: 10px 0 20px;
-    font-size: 1.2rem;
+    margin: 10px 0 30px;
+    font-size: 1.5rem;
 }
 
 .cta-button {
-    background-color: #ffc107;
-    color: #343a40;
-    padding: 10px 20px;
+    background-color: #FF6F61;
+    color: white;
+    padding: 12px 24px;
     text-decoration: none;
     border-radius: 50px;
     font-weight: bold;
-
+    transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #e0a800;
+    background-color: #FF8C42;
 }
 
 .search-form {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .search-form input {
-    padding: 10px;
-    font-size: 1rem;
-    width: 60%;
-    max-width: 500px;
+    padding: 12px;
+    font-size: 1.1rem;
+    width: 70%;
+    max-width: 600px;
     border: 1px solid #ced4da;
     border-radius: 5px;
 }
 
 .search-form button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1rem;
     color: white;
-    background-color: #007bff;
+    background-color: #FF6F61;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .search-form button:hover {
-    background-color: #0056b3;
+    background-color: #FF8C42;
 }
 
 .concerts-section {
-    background-color: #f9f9f9;
-    padding: 60px 20px;
+    background-color: #F8F1FF;
+    padding: 80px 20px;
 }
 
 .concerts-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
     justify-items: center;
 }
 
 .concert-card {
     background: white;
     border: 1px solid #dee2e6;
-    padding: 20px;
+    padding: 30px;
     margin: 15px;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
 }
 
 .concert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .concert-card h3 {
-    margin-top: 0;
-    font-size: 1.5rem;
-    color: #007bff
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    color: #FF6F61   
 }
 
 .concert-card p {
     margin: 5px 0;
+    font-size: 1.1rem;
+    color: #555;
 }
 
 .concert-card a {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #007bff;
+    margin-top: 15px;
+    padding: 12px 18px;
+    background-color: #FF6F61 ;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .concert-card a:hover {
-    background-color: #0056b3;
+    background-color: #FF8C42;
 }
 
 .about-content {
-    padding: 40px 20px;
+    padding: 60px 20px;
     max-width: 800px;
     margin: 0 auto;
-    line-height: 1.6;
-    color: #343a40
+    line-height: 1.8;
+    color: #455A64  
 }
 
 .about-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-    color:#007bff
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color:#FF6F61  
 }
 
 .about-content ul {
     list-style: disc;
-    margin: 10px 0 20px;
+    margin: 15px 0 30px;
     padding-left: 40px;
 }
 
 .about-content ul li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .artist-header {
-    background: linear-gradient(135deg, #6f42c1, #007bff);
+    background: linear-gradient(135deg, #FF6F61, #F8F1FF);
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 
 .artist-header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin: 0;
-    color: #ffc107;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFC107;
 }
 .artist-header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 1.5rem;
+    margin-top: 15px;
 }
 
 .artist-profile {
@@ -163,19 +170,19 @@ body {
     background-color: white;
     border: 1px solid #dee2e6;
     border-radius: 15px;
-    padding: 20px;
+    padding: 30px;
     margin: 40px auto;
     max-width: 800px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .artist-profile img {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 40px;
-    border: 2px solid #ff4500;
+    border: 2px solid #FFC107;
 }
 
 .artist-header .details {
@@ -184,29 +191,29 @@ body {
 
 .artist-profile .details h2 {
     margin: 0;
-    font-size: 1.8rem;
-    color: #007bff;
+    font-size: 2rem;
+    color: #FF6F61;
 }
 
 .artist-profile .details p {
-    margin: 10px 0;
-    font-size: 1rem;
+    margin: 15px 0;
+    font-size: 1.1rem;
     color: #6c757d;
 }
 
 .artist-profile .details a {
     display: inline-block;
-    padding: 10px 15px;
-    background-color: #ffc107;
+    padding: 12px 18px;
+    background-color: #FFC107;
     color: #343a40;
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9rem;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .artist-profile .details a:hover {
-    background-color: #e0a800;
+    background-color: #FFA07A;
 }
 
 
@@ -220,6 +227,10 @@ footer {
     position: fixed;
     width:100%;
     bottom: 0;
+}
+
+footer p {
+    margin: 0;
 }
 
 @media (max-width: 768px) {
