@@ -161,7 +161,24 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
     <footer class="footer">
         <p>&copy; 2024 The Music Map. All Rights Reserved</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll(".artist-card");
+        const totalItems = items.length;
 
+        function changeSlide() {
+            // Remove active class from the current item
+            items[currentIndex].classList.remove("active-slide");
+
+            // Move to the next item (loop back to the first one if at the end)
+            currentIndex = (currentIndex + 1) % totalItems;
+
+            // Add active class to the new item
+            items[currentIndex].classList.add("active-slide");
+        }
+
+        // Change slide every 3 seconds
+        setInterval(changeSlide, 3000);
+    </script>
 </body>
 </html>

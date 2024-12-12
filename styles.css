@@ -145,10 +145,10 @@ body {
 .concerts-section {
     width: 650px;
     background-color: #F8F1FF;
-    padding: 80px 20px;
+    padding: 1rem;
     border-top: 2px solid #dee2e6;
     margin-top: 5px;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     z-index: 10;
     position: relative;
@@ -159,7 +159,7 @@ body {
 
 .concerts-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     justify-items: center;
     margin-top: 40px;
@@ -297,6 +297,7 @@ body {
 
 .artist-profile .details {
     text-align: center;
+    flex: 1;
 }
 
 .artist-profile .details h2 {
@@ -343,6 +344,8 @@ body {
     display: none;
     text-align: center;
     transition: transform 0.5s ease-in-out;
+    width: 100%;
+    max-width: 100%;
 }
 
 .artist-card.active-slide {
@@ -350,9 +353,11 @@ body {
 }
 
 .artist-image {
-    max-height: 400px;
+    max-height: 300px;
     object-fit: cover;
-    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    display: block;
     border-radius: 10px;
 }
 
@@ -374,12 +379,26 @@ body {
     margin-top: 5px;
 }
 
+#artistCarousel {
+    position: relative;
+    top: -50px;
+    left: 60%;
+    width: 40%;
+    margin-bottom: 30px;
+    z-index: 10;
+}
+
+#artistCarousel .carousel-item {
+    width: 100%;
+    max-width: 100%;
+}
+
 
 footer {
     background:#343a40;
     color: white;
     text-align: center;
-    padding: 10px 20px;
+    padding: 1rem;
     font-size: 0.8rem;
     position: relative;
     width:100%;
