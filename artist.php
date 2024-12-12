@@ -98,5 +98,7 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
     <p>&copy; 2024 The Music Map. All Rights Reserved</p>
 </footer>
 
+
+
 </body>
 </html>

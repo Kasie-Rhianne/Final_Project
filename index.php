@@ -68,6 +68,8 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Music Map</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -116,6 +118,9 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
             <?php endforeach; ?>    
         </div>
     </section>
+
+    <section class="featured-artists">
+        <h2 class="text-center my-4></h2>
 
     <footer class="footer">
         <p>&copy; 2024 The Music Map. All Rights Reserved</p>
