@@ -58,23 +58,21 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
     <header class="hero-section">
         <div class="hero-overlay">
             <h1 class="hero-title">Artist Profile: <?= htmlspecialchars($artist['name']); ?></h1>
-            <p class="hero-genre">Genre: <?= htmlspecialchars($artist['genre']); ?></p>
-            <p class="hero-bio">Bio: <?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
             <a href="#concerts" class="cta-button">See Upcoming Concerts</a>
         </div>
     </header>
 
     <div class="artist-page">
         <div class="artist-profile">
+        <?php if ($artist['image_url']): ?>
+                <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="Artist Image" class="artist-image">
+            <?php endif; ?>
+
             <div class="details">
                 <h2><?= htmlspecialchars($artist['name']); ?></h2>
                 <p><strong>Genre:</strong> <?= htmlspecialchars($artist['genre']); ?></p>
                 <p class="bio"><?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
-            </div>
-            
-            <?php if ($artist['image_url']): ?>
-                <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="Artist Image" class="artist-image">
-            <?php endif; ?>
+            </div>           
         </div>
 
         <section class="concerts-section" id="concerts">
@@ -96,9 +94,9 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
         </div>
     </section>
 
-    <footer class="footer">
-        <p>&copy; 2024 The Music Map. All Rights Reserved</p>
-    </footer>
+<footer class="footer">
+    <p>&copy; 2024 The Music Map. All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
