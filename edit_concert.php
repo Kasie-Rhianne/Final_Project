@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: dashboard.php");
     }
 } else {
-    $sql = "SELECT c.*, a.name AS artist_name, v.name AS venue_name FROM concerts c
+    $sql = "SELECT c.*, a.name AS artist_name, v.venue_name AS venue_name FROM concerts c
             JOIN artists a ON c.artist_id = a.artist_id
             JOIN venue v ON c.venue_id = v.venue_id
             WHERE concert_id = :concert_id";
@@ -73,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo "<option value=\"" . htmlspecialchars($artist['name']) . "\" $selected>" . htmlspecialchars($artist['name']) . "</option>";
             }
             ?>
+        </select><br>
 
         <label for="venue">Venue:</label>
         <input type="text" name="venue" value="<?php echo $concert['venue']; ?>" required><br>
