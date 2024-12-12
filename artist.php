@@ -69,6 +69,11 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
     </header>
 
     <div class="artist-page">
+        <section class="artist_bio">
+            <h2>Artist Biograpgy</h2>
+            <p><?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
+        </section>
+        
         <section class="concerts-section" id="concerts">
             <h2 class="section-title">Upcoming Concerts</h2>
             <div class="concerts-container">
