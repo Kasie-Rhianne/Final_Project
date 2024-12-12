@@ -45,6 +45,41 @@ body {
     font-size: 1.5rem;
 }
 
+.hero-section img.artist-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 4px solid #ffc107;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.hero-genre, .hero-bio {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    z-index: 2;
+}
+
 .cta-button {
     background-color: #FF6F61;
     color: white;
@@ -218,16 +253,6 @@ body {
     margin: 40px auto;
     max-width: 800px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.artist-profile image_url {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 40px;
-    border: 4px solid #FFC107;
-    display: block;
 }
 
 .artist-header .details {

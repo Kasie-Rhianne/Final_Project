@@ -56,23 +56,28 @@ if(!isset($_GET['artist_id']) || empty($_GET['artist_id'])) {
 </head>
 <body>
     <header class="hero-section">
-        <h1>Artist Profile: <?= htmlspecialchars($artist['name']); ?></h1>
-        <p>Genre: <?= htmlspecialchars($artist['genre']); ?></p>
-        <p>Bio: <?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
+        <div class="hero-overlay">
+            <h1 class="hero-title">Artist Profile: <?= htmlspecialchars($artist['name']); ?></h1>
+            <p class="hero-genre">Genre: <?= htmlspecialchars($artist['genre']); ?></p>
+            <p class="hero-bio">Bio: <?= nl2br(htmlspecialchars($artist['bio'])); ?></p>
+            <a href="#concerts" class="cta-button">See Upcoming Concerts</a>
+        </div>
+        
         <?php if ($artist['image_url']): ?>
-            <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="Artist Image">
-            <?php endif; ?>
+            <img src="<?= htmlspecialchars($artist['image_url']); ?>" alt="Artist Image" class="artist-image">
+        <?php endif; ?>
     </header>
 
-    <section class="concerts-section">
-        <h2>Upcoming Concerts</h2>
-        <div class="concerts-container">
-            <?php if (empty($concerts)): ?>
-                <p>No upcoming concerts for this artist.</p>
-            <?php else: ?>
-                <?php foreach ($concerts as $concert): ?>
-                    <div class="concert-card">
-                        <h3>Concert at <?= htmlspecialchars($concert['venue_name']); ?></h3>
+    <div class="artist-page">
+        <section class="concerts-section" id="concerts">
+            <h2 class="section-title">Upcoming Concerts</h2>
+            <div class="concerts-container">
+                <?php if (empty($concerts)): ?>
+                    <p>No upcomingcConcerts for this artist</p>
+                <?php else: ?> 
+                    <?php foreach ($concerts as $concert): ?>
+                        <div class="concert-card">
+                        <h3 class="concert-title">Concert at <?= htmlspecialchars($concert['venue_name']); ?></h3>
                         <p><strong>City:</strong> <?= htmlspecialchars($concert['city']); ?>, <?= htmlspecialchars($concert['state']); ?></p>
                         <p><strong>Date:</strong> <?= htmlspecialchars($concert['date']); ?></p>
                         <p><strong>Time:</strong> <?= htmlspecialchars($concert['time']); ?></p>
