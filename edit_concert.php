@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "UPDATE concerts SET artist = :artist, venue = :venue, date = :date, time = :time WHERE id = :id";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['artist' => $artsit, 'venue' => $venue, 'date' => $date, 'time' => $time, 'id' => $id]);
+    $stmt->execute(['artist' => $artist, 'venue' => $venue, 'date' => $date, 'time' => $time, 'id' => $id]);
 
     echo "Concert updated successfully!";
     header("Location: dashboard.php");
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="artist">Artist:</label>
         <input type="text" name="artist" value="<?php echo $concert['artist']; ?>" required><br>
 
-        <label for="venue">Vanue:</label>
+        <label for="venue">Venue:</label>
         <input type="text" name="venue" value="<?php echo $concert['venue']; ?>" required><br>
 
         <label for="date">Date:</label>

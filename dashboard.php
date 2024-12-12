@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'db_connect';
+require 'db_connect.php';
 
 if(!isset($_SESSION['user_id'])) {
     header("Location: login.php");
@@ -31,10 +31,18 @@ $concerts = $stmt->fetchAll();
     <ul>
         <?php foreach ($concerts as $concert): ?>
             <li>
-                <?php echo $concert['artist']; ?> at <?php echo $concert['venue']; ?> on <?php echo $concert['date']; ?>
+                <?php echo ($concert['artist_id']) ? htmlspecialchars($concert['artist_id']) : 'Unknown Artist'; ?>
+                at
+                <?php echo ($concert['venue_id']) ? htmlspecialchars($concert['venue_id']) : 'Unknown Venue'; ?>
+                on
+                <?php echo ($concert['date']) ? htmlspecialchars($concert['date']) : 'Unknown Date'; ?>
                 <a href="edit_concert.php?id=<?php echo $concert['id']; ?>">Edit</a>
                 <a href="delete_concert.php?id=<?php echo $concert['id']; ?>">Delete</a>
             </li>
         <?php endforeach; ?>
     </ul>
+
+    <button onclick="window.location.href='index.php';">Back to Home</button>
+
+    
 </body>

@@ -8,12 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($username && $password){
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $conn = new mysqli('localhost', 'root', '', 'the_music_map');
+        $conn = new mysqli('localhost', 'root', 'mysql', 'the_music_map');
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $stmt = conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+        $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
         $stmt->bind_param("ss", $username, $hashedPassword);
 
         if ($stmt->execute()) {

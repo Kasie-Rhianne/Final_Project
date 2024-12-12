@@ -8,17 +8,18 @@ if(!isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $artist = $_POST['artist'];
-    $venue = $_POST['venue'];
+    $artist_id = $_POST['artist_id'];
+    $venue_id = $_POST['venue_id'];
     $date = $_POST['date'];
     $time = $_POST['time'];
 
-    $sql = "INSERT INTO concerts (artist, venue, date, time) VALUES (:artist, :venue, :date, :time)";
+    $sql = "INSERT INTO concerts (artist_id, venue_id, date, time) VALUES (:artist_id, :venue_id, :date, :time)";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['artist' => $artist, 'venue' => $venue, 'date' => $date, 'time' => $time]);
+    $stmt->execute(['artist_id' => $artist_id, 'venue_id' => $venue_id, 'date' => $date, 'time' => $time]);
 
     echo "Concert added successfully!";
     header("Location: dashboard.php");
+    exit();
 
 }
 ?>
@@ -34,12 +35,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>Add New Concert</h1>
     <form method="POST">
-        <label for="artist">Artist:</label>
-        <input type="text" name="artist" required><br>
+        <label for="artist_id">Artist:</label>
+        <select name="artist_id" required>
+            <?php
+            $artists = $pdo->query("SELECT id, name FROM artists")->fetchAll();
+            foreach ($artists as $artist) {
+                echo "<option value='" . $artist['id'] . "'>" . $artist['name'] . "</option>";
+            }
+            ?>
+        </select><br>
 
-        <label for="venue">Vanue:</label>
-        <input type="text" name="venue" required><br>
-
+        <label for="venue_id">Venue:</label>
+        <select name="venue_id" required>
+            <?php
+            $artists = $pdo->query("SELECT id, name FROM venues")->fetchAll();
+            foreach ($venues as $venue) {
+                echo "<option value='" . $venue['id'] . "'>" . $venue['name'] . "</option>";
+            }
+            ?>
+        </select><br>
         <label for="date">Date:</label>
         <input type="date" name="date" required><br>
 

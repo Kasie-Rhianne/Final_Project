@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost'; 
 $dbname = 'the_music_map'; 
-$user = 'root'; 
-$pass = 'mysql';
+$username = 'root'; 
+$password = 'mysql';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
@@ -13,7 +13,7 @@ $options = [
 ];
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
+    $pdo = new PDO($dsn, $username, $password, $options);
 } catch (PDOException $e) {
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }

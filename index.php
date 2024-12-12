@@ -157,10 +157,6 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
                 <span class="visually-hidden">Next</span>
             </button>
 
-
-    <footer class="footer">
-        <p>&copy; 2024 The Music Map. All Rights Reserved</p>
-    </footer>
     <script>
         let currentIndex = 0;
         const items = document.querySelectorAll(".artist-card");
@@ -180,5 +176,10 @@ if (isset($_GET['genre']) && !empty($_GET['genre'])) {
         // Change slide every 3 seconds
         setInterval(changeSlide, 3000);
     </script>
+
+<footer class="footer">
+        <p>&copy; 2024 The Music Map. All Rights Reserved</p>
+</footer>
+
 </body>
 </html>

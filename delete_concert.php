@@ -15,4 +15,5 @@ $stmt->execute(['id' => $id]);
 
 echo "Concert deleted successfully!";
 header("Location: dashboard.php");
+exit();
 ?>
